@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>香港的士筆試 HK Taxi Exam - 智能筆試輔助工具</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google AdSense 驗證與自動廣告代碼 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6074839973481448" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg-cream: #FFF9F6;
+            --bg-peach: #FFE6D9;
+            --primary: #FF7E67;
+            --primary-hover: #ff654a;
+            --text-main: #4A4A4A;
+            --text-muted: #7E6E65;
+            --white: #FFFFFF;
+            --card-border: rgba(234, 220, 212, 0.4);
+            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-cream); 
+            color: var(--text-main);
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+
+        h1 { 
+            font-size: 2.8rem; 
+            font-weight: 800; 
+            color: var(--primary); 
+            line-height: 1.25;
+            margin-bottom: 16px;
+        }
+
+        p.subtitle { 
+            font-size: 1.15rem; 
+            color: var(--text-muted); 
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 48px 24px; }
+            h1 { font-size: 2rem; }
+            .container { margin: 40px auto; padding: 0 24px; }
+        }
+        
+        .intro-section {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(142, 122, 108, 0.04);
+            border: 1px solid var(--card-border);
+            margin-bottom: 48px;
+        }
+        
+        .intro-section h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .intro-section h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: var(--bg-peach);
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        .intro-section p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin: 64px 0;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(142, 122, 108, 0.03);
+            border: 1px solid var(--card-border);
+            transition: transform 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: var(--bg-cream);
+            border-radius: 50%;
+            transition: transform 0.4s var(--transition-smooth);
+            z-index: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(142, 122, 108, 0.08);
+        }
+
+        .feature-card:hover::before {
+            transform: scale(1.2);
+            background: var(--bg-peach);
+        }
+
+        .feature-card h3 { 
+            color: var(--primary); 
+            margin-top: 0; 
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 2;
+        }
+
+        .app-section {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 28px;
+            box-shadow: 0 30px 60px rgba(142, 122, 108, 0.06);
+            border: 1px solid var(--card-border);
+            margin-bottom: 64px;
+        }
+
+        .app-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .app-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        .privacy-section {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px dashed var(--card-border);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 80px;
+        }
+
+        .privacy-section h3 {
+            color: var(--text-main);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .privacy-section p {
+            margin-bottom: 16px;
+        }
+
+        .privacy-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--card-border);
+            background-color: var(--white);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>香港的士筆試 HK Taxi Exam</h1>
+        <p class="subtitle">全港最專業的的士與網約車筆試備試神器，助你一次順利合格</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="intro-section">
+            <h2>關於「香港的士筆試」</h2>
+            <p><strong>香港的士筆試 (HK Taxi Exam)</strong> 是一款專為香港考生量身打造的智能備考工具。結合最新官方題庫與高效學習模式，助你告別厚重的書本，隨時隨地輕鬆溫習。</p>
+            <p>本工具涵蓋筆試三大核心單元：的士則例、地方及路線、道路交通條例。支援離線練習、錯題重溫與模擬考試，助你高效率掌握考試要點，輕鬆取得牌照。</p>
+            <p>如有任何查詢或需要技術支援，歡迎隨時聯絡我們：<a href="mailto:bigangelrxsw@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: bold;">bigangelrxsw@gmail.com</a></p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>全真題庫練習</h3>
+                <p>緊貼運輸署最新考試方向，涵蓋的士則例、地方路線與道路交通條例三大核心單元。</p>
+            </div>
+            <div class="feature-card">
+                <h3>智能離線模式</h3>
+                <p>支援全線離線使用，無論在港鐵車廂或候客期間，打開手機就能隨時隨地刷題。</p>
+            </div>
+            <div class="feature-card">
+                <h3>錯題重溫與模擬</h3>
+                <p>自動記錄錯題建立專屬錯題本，並提供擬真計時模擬考試，大幅提升溫習效率。</p>
+            </div>
+        </section>
+
+        <section class="privacy-section">
+            <h3>隱私權政策與廣告說明 (Privacy Policy)</h3>
+            <p>歡迎訪問 <strong>nomummy.com</strong>（以下簡稱「本網站」）。我們極為重視您的隱私權。本網站為獨立工具平台，本身不會主動收集、儲存或洩漏您上傳的任何個人識別資料。</p>
+            <p>我們使用 Google AdSense 作為第三方廣告服務商。Google 會使用 Cookie 在本網站上向您投放廣告。您可隨時透過 Google 廣告和內容網路隱私權政策頁面，選擇不使用 DART Cookie。若對本隱私政策有任何疑問，歡迎聯絡：<strong>bigangelrxsw@gmail.com</strong>。</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Man Wai Lam. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
