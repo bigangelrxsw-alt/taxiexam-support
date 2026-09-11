@@ -176,7 +176,7 @@
             z-index: 2;
         }
 
-        .app-section {
+        .legal-section {
             background: var(--white);
             padding: 48px;
             border-radius: 28px;
@@ -185,39 +185,29 @@
             margin-bottom: 64px;
         }
 
-        .app-section h2 {
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-        }
-
-        .app-section p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-        }
-
-        .privacy-section {
-            background: rgba(255, 255, 255, 0.5);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px dashed var(--card-border);
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 80px;
-        }
-
-        .privacy-section h3 {
-            color: var(--text-main);
+        .legal-section h3 {
+            color: var(--primary);
+            margin-top: 0;
             margin-bottom: 16px;
+            font-size: 1.4rem;
+        }
+
+        .legal-section h4 {
+            color: var(--text-main);
+            margin-top: 24px;
+            margin-bottom: 8px;
             font-size: 1.1rem;
         }
 
-        .privacy-section p {
-            margin-bottom: 16px;
+        .legal-section p, .legal-section li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
         }
 
-        .privacy-section p:last-child {
-            margin-bottom: 0;
+        .legal-section ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
         }
         
         footer {
@@ -261,10 +251,45 @@
             </div>
         </section>
 
-        <section class="privacy-section">
-            <h3>隱私權政策與廣告說明 (Privacy Policy)</h3>
-            <p>歡迎訪問 <strong>nomummy.com</strong>（以下簡稱「本網站」）。我們極為重視您的隱私權。本網站為獨立工具平台，本身不會主動收集、儲存或洩漏您上傳的任何個人識別資料。</p>
-            <p>我們使用 Google AdSense 作為第三方廣告服務商。Google 會使用 Cookie 在本網站上向您投放廣告。您可隨時透過 Google 廣告和內容網路隱私權政策頁面，選擇不使用 DART Cookie。若對本隱私政策有任何疑問，歡迎聯絡：<strong>bigangelrxsw@gmail.com</strong>。</p>
+        <!-- 隱私權政策區塊 -->
+        <section id="privacy" class="legal-section">
+            <h3>隱私權政策 (Privacy Policy)</h3>
+            <p>生效日期：2026 年 9 月 11 日</p>
+            <p>歡迎使用「香港的士及網約車筆試」應用程式（以下簡稱「本應用程式」）。我們極度重視您的個人隱私與數據安全。本隱私權政策旨在說明我們如何收集、使用及保護您的資訊。</p>
+            
+            <h4>1. 我們收集的資訊</h4>
+            <ul>
+                <li><strong>非個人化使用數據</strong>：為了改善應用程式效能與修復錯誤，我們可能會透過第三方分析工具收集匿名崩潰日誌與基本裝置資訊。</li>
+                <li><strong>應用程式內購資訊</strong>：當您購買 Pro 版解鎖功能時，所有交易均由 Apple App Store 或 Google Play Store 安全處理，我們不會直接獲取或儲存您的信用卡號或銀行帳戶密碼。</li>
+            </ul>
+
+            <h4>2. 資訊的使用與第三方服務</h4>
+            <p>收集的所有數據僅用於提供、維護及改善本應用程式之核心功能。本網站亦使用 Google AdSense 作為第三方廣告服務商，Google 可能會使用 Cookie 來投放廣告。您可隨時透過 Google 相關隱私權政策頁面管理您的 Cookie 設定。</p>
+
+            <h4>3. 聯絡我們</h4>
+            <p>若對本隱私權政策有任何疑問，歡迎隨時透過電子郵件與我們聯繫：<strong>bigangelrxsw@gmail.com</strong>。</p>
+        </section>
+
+        <!-- 服務條款區塊 -->
+        <section id="terms" class="legal-section">
+            <h3>服務條款 (Terms of Service)</h3>
+            <p>生效日期：2026 年 9 月 11 日</p>
+            <p>歡迎使用「香港的士及網約車筆試」應用程式。當您下載、安裝或使用本應用程式，即代表您同意遵守以下服務條款。</p>
+            
+            <h4>1. 服務內容</h4>
+            <ul>
+                <li>本應用程式提供香港的士筆試及網約車相關之模擬試題、練習模式與學習輔助工具。</li>
+                <li>本應用程式為獨立開發之學習輔助工具，並非香港特別行政區政府官方機構。</li>
+            </ul>
+
+            <h4>2. 付費與解鎖條款</h4>
+            <p>本應用程式提供一次性付費解鎖完整功能的選項（Pro 版）。所有購買行為均透過 Apple App Store 或 Google Play Store 進行安全結帳與管理，一經完成購買即按照相應平台之規則執行。</p>
+
+            <h4>3. 智慧財產權與免責聲明</h4>
+            <p>本應用程式之介面設計、題庫排版及內容均受智慧財產權保護。本模擬試題與解析僅供備考參考，不保證使用者必然能通過官方考試。</p>
+
+            <h4>4. 條款修改</h4>
+            <p>我們保留隨時修改本服務條款之權利，修改後將於本網頁公告後立即生效。</p>
         </section>
 
     </div>
